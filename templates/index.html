@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/style.css?v=5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="header">
+        <h2>RAG</h2>
+        <button id="theme-toggle" class="btn-theme" title="Toggle Theme">
+          <!-- Sun/Moon Icon SVG -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Upload Section -->
+      <div class="nav">
+        <input type="file" id="file" accept=".txt,.pdf" hidden>
+        <button id="upload-btn" class="btn-full" onclick="document.getElementById('file').click()">
+          + New Document
+        </button>
+
+        <!-- Status Badge -->
+        <div id="file-status" class="status-item hidden">
+          <div id="status-dot" class="status-dot"></div>
+          <div class="status-text-container">
+            <span id="filename" class="filename">document.pdf</span>
+            <span id="status-label" class="status-label">Ready</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="flex: 1;"></div>
+
+      <!-- Links -->
+      <div class="model-links">
+        <h4>Models</h4>
+        <a href="https://abhinavdread-bge-en-ft-optimised.hf.space" target="_blank" class="btn-model">
+          <span>Embed Model</span>
+          <span class="arrow">↗</span>
+        </a>
+        <a href="https://abhinavdread-qwen-1-5b-q4-k-m.hf.space" target="_blank" class="btn-model">
+          <span>Gen Model</span>
+          <span class="arrow">↗</span>
+        </a>
+        <a href="https://github.com/abhinav-0401" target="_blank" class="btn-model">
+          <span>GitHub Repo</span>
+          <span class="arrow">↗</span>
+        </a>
+      </div>
+
+      <!-- Reset -->
+      <button id="reset-btn" class="btn-reset" disabled>
+        Reset Session
+      </button>
+    </aside>
+
+    <main class="main">
+      <div id="chat-history" class="chat-history">
+        <div class="empty-state">
+          <p>Upload a document to begin.</p>
+        </div>
+      </div>
+
+      <div class="input-area">
+        <div class="input-box">
+          <input type="text" id="question" placeholder="Ask a question..." autocomplete="off" disabled>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+
+</html>
