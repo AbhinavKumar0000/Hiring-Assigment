@@ -26,7 +26,7 @@ graph TD
     subgraph "Ingestion Pipeline (Background Task)"
         API -->|1. Parse & Chunk| Splitter[Text Splitter]
         Splitter -->|2. Generate Embeddings| EmbedAPI[External Embedding API]
-        EmbedAPI -->|3. Store Vectors| FAISS[FAISS Vector Store\n(In-Memory/Session)]
+        EmbedAPI -->|3. Store Vectors| FAISS["FAISS Vector Store<br/>(In-Memory/Session)"]
     end
     
     subgraph "Query & Retrieval Pipeline"
