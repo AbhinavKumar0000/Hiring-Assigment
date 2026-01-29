@@ -6,3 +6,4 @@ faiss-cpu
 pymupdf
 jinja2
 python-multipart
+langchain-text-splitters
